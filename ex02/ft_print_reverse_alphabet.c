@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 19:13:20 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/05 19:13:52 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putchar(char c) {
+void	ft_putchar(char c) {
 	write(STDOUT_FILENO, &c, 1);
 }
 
-void ft_print_reverse_alphabet(void) {
+void	ft_print_reverse_alphabet(void)
+{
 	char letter;
 	letter = 'z';
 
@@ -14,7 +27,8 @@ void ft_print_reverse_alphabet(void) {
 	}
 }
 
-int main(void) {
+int main(void)
+{
 	ft_print_reverse_alphabet();
-	return 0;
+	return (0);
 }
