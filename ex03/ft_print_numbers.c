@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:13:05 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/05 19:13:17 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/06 18:29:08 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_putchar(char c)
 
 void	ft_print_numbers(void)
 {
-	int number;
-	number = 0;
+	char	number;
 
-	while (number <= 9)
+number = '0';
+	while (number <= '9')
 	{
 		ft_putchar(number);
 		number++;
