@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:32:56 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/07 11:25:59 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:53:24 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	ft_is_negative(int n)
 	}
 }
 
-int	main(void)
-{
-	ft_is_negative(10);
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_is_negative(10);
+// 	return (0);
+// }

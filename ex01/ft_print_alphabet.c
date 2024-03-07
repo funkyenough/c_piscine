@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 18:57:29 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/06 16:20:51 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:49:18 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c)
 {
-	write(STDOUT_FILENO, &c, 1);
+	write(1, &c, 1);
 }
 
 void	ft_print_alphabet(void)
@@ -29,8 +29,8 @@ void	ft_print_alphabet(void)
 	}
 }
 
-int	main(void)
-{
-	ft_print_alphabet();
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_print_alphabet();
+// 	return (0);
+// }

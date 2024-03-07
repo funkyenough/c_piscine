@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:13:05 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/06 18:29:08 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:52:43 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ number = '0';
 	}
 }
 
-int	main(void)
-{
-	ft_print_numbers();
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_print_numbers();
+// 	return (0);
+// }
