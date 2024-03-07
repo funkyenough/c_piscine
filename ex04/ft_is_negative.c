@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:32:56 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/06 19:46:48 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 11:25:59 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void	ft_is_negative(int n);
 
 void	ft_is_negative(int n)
 {
-	char positive = 'P';
-	char negative = 'N';
+	char	positive;
+	char	negative;
 
+	positive = 'P';
+	negative = 'N';
 	if (n >= 0)
 	{
 		write(1, &positive, 1);
@@ -29,7 +31,7 @@ void	ft_is_negative(int n)
 	}
 }
 
-int	main(void) 
+int	main(void)
 {
 	ft_is_negative(10);
 	return (0);
