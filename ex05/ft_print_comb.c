@@ -6,13 +6,11 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:20:00 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/07 14:13:24 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 15:22:57 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_print_comb(void);
 
 void	ft_putchar(char c)
 {
@@ -48,8 +46,8 @@ void	ft_print_comb(void)
 	}
 }
 
-// int	main(void)
-// {
-// 	ft_print_comb();
-// 	return (0);
-// }
+int	main(void)
+{
+	ft_print_comb();
+	return (0);
+}

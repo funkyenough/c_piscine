@@ -6,13 +6,11 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:32:56 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/07 15:16:47 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 15:27:37 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_is_negative(int n);
 
 void	ft_is_negative(int n)
 {
