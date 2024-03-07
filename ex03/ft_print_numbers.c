@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:13:05 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/07 13:52:43 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 15:11:36 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c)
 {
-	write(STDOUT_FILENO, &c, 1);
+	write(1, &c, 1);
 }
 
 void	ft_print_numbers(void)
