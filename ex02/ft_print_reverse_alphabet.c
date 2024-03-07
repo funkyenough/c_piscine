@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 19:13:20 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/07 13:49:32 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/07 15:05:31 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_print_reverse_alphabet(void)
 	}
 }
 
-int	main(void)
-{
-	ft_print_reverse_alphabet();
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_print_reverse_alphabet();
+// 	return (0);
+// }
