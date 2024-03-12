@@ -6,33 +6,33 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 22:09:51 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 19:59:44 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 19:02:58 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	char	*ptr;
 
-	i = 0;
-	while (i < n && src[i] != 0)
+	ptr = dest;
+	while (n >= 1 && *src != 0)
 	{
-		dest[i] = src[i];
-		i++;
+		*dest++ = *src++;
+		n--;
 	}
-	while (i < n)
+	while (n >= 1)
 	{
-		dest[i] = '\0';
-		i++;
+		*dest++ = '\0';
+		n--;
 	}
-	return (dest);
+	return (ptr);
 }
 // #include <stdio.h>
 // #include <string.h>
 
 // void	print_hex(char *str)
 // {
-// 	for (int j = 0; j < sizeof(str) + 5; j++)
+// 	for (unsigned int j = 0; j < sizeof(str) + 50; j++)
 // 		printf("%02X ", str[j]);
 // 	printf("\n\n");
 // }
@@ -46,7 +46,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 // 	char			ft_src[] = "Hello World!";
 // 	char			*ft_str;
 
-// 	n = 15;
+// 	n = 30;
 // 	ft_str = ft_strncpy(ft_dest, ft_src, n);
 // 	printf("ft_strncpy output is\n%s\n", ft_str);
 // 	print_hex(ft_str);

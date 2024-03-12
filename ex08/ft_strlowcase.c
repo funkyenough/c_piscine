@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:56:11 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 19:56:57 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 19:03:34 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@ char	*ft_strlowcase(char *str)
 
 {
 	char	offset;
-	int		count;
+	char	*ptr;
 
+	ptr = str;
 	offset = 'a' - 'A';
-	count = 0;
-	while (str[count] != '\0')
+	while (*str != '\0')
 	{
-		if (('A' <= str[count] && str[count] <= 'Z'))
+		if (('A' <= *str && *str <= 'Z'))
 		{
-			str[count] += offset;
+			*str += offset;
 		}
-		count++;
+		str++;
 	}
-	return (str);
+	return (ptr);
 }
 
 // #include <stdio.h>

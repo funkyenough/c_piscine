@@ -6,22 +6,19 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:56:01 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 20:02:47 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 18:43:58 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_numeric(char *str)
 {
-	int	count;
-
-	count = 0;
-	while (str[count] != '\0')
+	while (*str != '\0')
 	{
-		if (!('0' <= str[count] && str[count] <= '9'))
+		if (!('0' <= *str && *str <= '9'))
 		{
 			return (0);
 		}
-		count++;
+		str++;
 	}
 	return (1);
 }

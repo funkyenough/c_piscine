@@ -6,23 +6,19 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:55:55 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 20:01:10 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 19:03:06 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_alpha(char *str)
 {
-	int	count;
-
-	count = 0;
-	while (str[count] != '\0')
+	while (*str != '\0')
 	{
-		if (!(('a' <= str[count] && str[count] <= 'z') || ('A' <= str[count]
-					&& str[count] <= 'Z')))
+		if (!(('a' <= *str && *str <= 'z') || ('A' <= *str && *str <= 'Z')))
 		{
 			return (0);
 		}
-		count++;
+		str++;
 	}
 	return (1);
 }

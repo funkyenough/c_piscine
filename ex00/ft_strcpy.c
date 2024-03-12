@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 20:24:06 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 16:30:29 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 18:40:34 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ int		str_len(char *str);
 // Implying that there string ends with \0
 char	*ft_strcpy(char *dest, char *src)
 {
-	int	count;
-	int	length;
+	int		len;
+	char	*ptr;
 
-	length = str_len(src);
-	count = 0;
-	while (count < length)
+	ptr = dest;
+	len = str_len(src);
+	while (len >= 0)
 	{
-		dest[count] = src[count];
-		count++;
+		*dest++ = *src++;
+		len--;
 	}
-	return (dest);
+	return (ptr);
 }
 
 int	str_len(char *str)
@@ -55,9 +55,18 @@ int	str_len(char *str)
 // 	char	ft_src[6] = "abcde";
 // 	char	*ft_res;
 
-// 	res = strcpy(dest, src);
-// 	printf("strcpy response: %s\n", res);
-// 	ft_res = ft_strcpy(ft_dest, ft_src);
-// 	printf("ft_strcpy response: %s\n", ft_res);
-// 	return (0);
+// 	// Test case 1: Normal string copy
+//     res = strcpy(dest, src);
+//     printf("strcpy response: %s\n", res);
+//     ft_res = ft_strcpy(ft_dest, ft_src);
+//     printf("ft_strcpy response: %s\n", ft_res);
+
+//     // Test case 2: Copy empty string
+//     char empty[] = "";
+//     char dest2[1];
+//     char ft_dest2[1];
+//     res = strcpy(dest2, empty);
+//     printf("strcpy empty string: %s\n", res);
+//     ft_res = ft_strcpy(ft_dest2, empty);
+//     printf("ft_strcpy empty string: %s\n", ft_res);
 // }

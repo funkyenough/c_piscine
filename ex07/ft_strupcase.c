@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:56:09 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 20:03:09 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 19:03:26 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@ char	*ft_strupcase(char *str)
 
 {
 	char	offset;
-	int		count;
+	char	*ptr;
 
+	ptr = str;
 	offset = 'a' - 'A';
-	count = 0;
-	while (str[count] != '\0')
+	while (*str != '\0')
 	{
-		if (('a' <= str[count] && str[count] <= 'z'))
-		{
-			str[count] -= offset;
-		}
-		count++;
+		if (('a' <= *str && *str <= 'z'))
+			*str -= offset;
+		str++;
 	}
-	return (str);
+	return (ptr);
 }
 
 // #include <stdio.h>

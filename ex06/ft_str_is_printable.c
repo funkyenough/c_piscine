@@ -6,22 +6,19 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:56:04 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/11 20:02:54 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 18:48:04 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_printable(char *str)
 {
-	int	count;
-
-	count = 0;
-	while (str[count] != '\0')
+	while (*str != '\0')
 	{
-		if (!('!' <= str[count] && str[count] <= '~'))
+		if (!(' ' <= *str && *str <= '~'))
 		{
 			return (0);
 		}
-		count++;
+		str++;
 	}
 	return (1);
 }
