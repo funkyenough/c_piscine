@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:36:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/12 12:03:18 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 19:17:06 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,35 +25,35 @@ char	*ft_strcat(char *dest, char *src)
 	return (ptr);
 }
 
-// #include <stdio.h>
-// #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
-// void	print_helper(char *str)
-// {
-// 	int	i;
+void	print_helper(char *str)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (str[i] != 0)
-// 	{
-// 		printf("%02X ", str[i]);
-// 		i++;
-// 	}
-// 	printf(" || %02X\n\n", str[i++]);
-// }
+	i = 0;
+	while (str[i] != 0)
+	{
+		printf("%02X ", str[i]);
+		i++;
+	}
+	printf(" || %02X\n\n", str[i++]);
+}
 
-// int	main(void)
-// {
-// 	char	dest[30] = "Hello, ";
-// 	char	src[] = "World!";
-// 	char	*str;
-// 	char	ft_dest[30] = "Hello, ";
-// 	char	ft_src[] = "World!";
-// 	char	*ft_str;
+int	main(void)
+{
+	// char	dest[8] = "Hello, ";
+	// char	src[] = "World!";
+	// char	*str;
+	char	ft_dest[8] = "Hello, ";
+	char	ft_src[] = "World!";
+	char	*ft_str;
 
-// 	ft_str = ft_strcat(ft_dest, ft_src);
-// 	str = strcat(dest, src);
-// 	printf("Output of strcat is: %s\n", str);
-// 	print_helper(str);
-// 	printf("Output of ft_strcat is: %s\n", ft_str);
-// 	print_helper(ft_str);
-// }
+	ft_str = ft_strcat(ft_dest, ft_src);
+	// str = strcat(dest, src);
+	// printf("Output of strcat is: %s\n", str);
+	// print_helper(str);
+	printf("Output of ft_strcat is: %s\n", ft_str);
+	print_helper(ft_str);
+}
