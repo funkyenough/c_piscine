@@ -6,20 +6,18 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:35:37 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/12 09:45:13 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:03:55 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-
-	i = 0;
-	while (!(s1[i] == '\0' || s2[i] == '\0'))
+	while (!(*s1 == 0 || *s2 == 0))
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
 	return (0);
 }
