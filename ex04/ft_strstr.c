@@ -11,27 +11,22 @@ char	*ft_strstr(char *str, char *to_find)
 	char	*needle;
 
 	needle = to_find;
-	if (to_find == 0)
+	if (to_find == '\0')
 		return (str);
-	while (*str != 0)
+	while (*str != '\0')
 	{
 		if (*str != *to_find)
-		{
 			str++;
-			continue ;
-		}
-		start = str;
-		while (1)
+		else
 		{
-			if (*++start != *++needle)
-			{
-				if (*needle == 0)
-					return (str);
-				str = start;
-				break ;
-			}
+			start = str;
+			needle = to_find;
+			while (*needle != '\0' && *++start != *++needle)
+				;
+			if (*needle == '\0')
+				return (++start);
+			str++;
 		}
-		needle = to_find;
 	}
 	return (0);
 }
