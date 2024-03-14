@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:02:37 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 20:02:43 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/14 21:38:12 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,20 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-void	helper(char *str, char *to_find)
-{
-	char	*test;
-	char	*stdlib;
+// void	helper(char *str, char *to_find)
+// {
+// 	char	*test;
+// 	char	*stdlib;
 
-	test = ft_strstr(str, to_find);
-	stdlib = strstr(str, to_find);
-	printf("%d\n", strncmp(test, stdlib, strlen(str)));
-	printf("%s ", ft_strstr(str, to_find));
-	printf("%s\n\n", strstr(str, to_find));
-}
+// 	test = ft_strstr(str, to_find);
+// 	stdlib = strstr(str, to_find);
+// 	printf("%d\n", strncmp(test, stdlib, strlen(str)));
+// 	printf("%s ", ft_strstr(str, to_find));
+// 	printf("%s\n\n", strstr(str, to_find));
+// }
 // int	main(void)
 // {
 // 	char str[] = "1TaDoWqB1s%Wp|S)d20~CD.V-kMAK/d";
