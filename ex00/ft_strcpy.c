@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 20:24:06 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/12 18:40:34 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/14 13:26:44 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,27 +46,42 @@ int	str_len(char *str)
 // #include <stdio.h>
 // #include <string.h>
 
+// void	test_strcpy(char *dest, char *src)
+// {
+// 	char	*res;
+
+// 	// Flush dest with a different value
+// 	memset(dest, 'X', strlen(dest));
+// 	res = strcpy(dest, src);
+// 	printf("strcpy: %s\n", res);
+// 	// Flush dest again before reusing it
+// 	memset(dest, 'X', strlen(dest));
+// 	res = ft_strcpy(dest, src);
+// 	printf("ft_strcpy: %s\n\n", res);
+// }
 // int	main(void)
 // {
-// 	char	dest[6];
-// 	char	src[6] = "abcde";
-// 	char	*res;
-// 	char	ft_dest[6];
-// 	char	ft_src[6] = "abcde";
-// 	char	*ft_res;
+// 	char	src1[1] = "";
+// 	char	src2[2] = "a";
+// 	char	src3[100] = "exceeds the original size of dest.";
+// 	char	src4[100] = "a newline character.\nTest";
+// 	char	src5[100] = "a tab character.\tTest";
+// 	char	src6[100] = "a null character.\0Test";
+// 	char	src7[100] = "a backslash character.\\Test";
+// 	char	src8[100] = "special characters.~`!@#$%^&*()-_=+{}[]|;:'<>,.?/Test";
+// 	char	src9[100] = "spaces. Test";
+// 	char	src10[100] = "non-printable characters.\x01\x02\x03Test";
+// 	char	dest[10];
 
-// 	// Test case 1: Normal string copy
-//     res = strcpy(dest, src);
-//     printf("strcpy response: %s\n", res);
-//     ft_res = ft_strcpy(ft_dest, ft_src);
-//     printf("ft_strcpy response: %s\n", ft_res);
-
-//     // Test case 2: Copy empty string
-//     char empty[] = "";
-//     char dest2[1];
-//     char ft_dest2[1];
-//     res = strcpy(dest2, empty);
-//     printf("strcpy empty string: %s\n", res);
-//     ft_res = ft_strcpy(ft_dest2, empty);
-//     printf("ft_strcpy empty string: %s\n", ft_res);
+// 	test_strcpy(dest, src1);
+// 	test_strcpy(dest, src2);
+// 	test_strcpy(dest, src3);
+// 	test_strcpy(dest, src4);
+// 	test_strcpy(dest, src5);
+// 	test_strcpy(dest, src6);
+// 	test_strcpy(dest, src7);
+// 	test_strcpy(dest, src8);
+// 	test_strcpy(dest, src9);
+// 	test_strcpy(dest, src10);
+// 	return (0);
 // }
