@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:36:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/12 19:17:06 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/14 20:02:43 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strcat(char *dest, char *src)
 		dest++;
 	while (*src != 0)
 		*dest++ = *src++;
-	*++dest = '\0';
+	// *++dest = '\0';
 	return (ptr);
 }
 
@@ -38,22 +38,22 @@ void	print_helper(char *str)
 		printf("%02X ", str[i]);
 		i++;
 	}
-	printf(" || %02X\n\n", str[i++]);
+	printf(" || %02X \n\n", str[++i]);
 }
 
 int	main(void)
 {
-	// char	dest[8] = "Hello, ";
-	// char	src[] = "World!";
-	// char	*str;
-	char	ft_dest[8] = "Hello, ";
+	char	ft_dest[30] = "Hello, ";
 	char	ft_src[] = "World!";
 	char	*ft_str;
+	char	src[] = "World!";
+	char	*str;
+	char	dest[30] = "Hello, ";
 
 	ft_str = ft_strcat(ft_dest, ft_src);
-	// str = strcat(dest, src);
-	// printf("Output of strcat is: %s\n", str);
-	// print_helper(str);
+	str = strcat(dest, src);
+	printf("Output of strcat is: %s\n", str);
+	print_helper(str);
 	printf("Output of ft_strcat is: %s\n", ft_str);
 	print_helper(ft_str);
 }
