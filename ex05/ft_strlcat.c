@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:02:36 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 21:38:06 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/14 21:53:03 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@ unsigned int	ft_str_len(char *str);
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	dest_len;
-	int	src_len;
+	unsigned int	dest_len;
+	unsigned int	src_len;
 
 	dest_len = ft_str_len(dest);
 	src_len = ft_str_len(src);
-	if (size == 0)
-		return (ft_str_len(src) + ft_str_len(dest));
+	if (size == 0 || dest_len > size)
+		return (dest_len + src_len);
 	while (*dest != 0)
 		dest++;
 	while (size - dest_len - 1 > 0)
 	{
 		*dest++ = *src++;
-		dest_len++;
+		size--;
 	}
 	return (dest_len + src_len);
 }
@@ -43,20 +43,20 @@ unsigned int	ft_str_len(char *str)
 	}
 	return ((unsigned int)i);
 }
-// #include <stdio.h>
-// #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
-// int	main(void)
-// {
-// 	char ft_dest[15] = "Hello, ";
-// 	char ft_src[7] = "World!";
-// 	char dest[15] = "Hello, ";
-// 	char src[7] = "World!";
-// 	unsigned int size = 12;
+int	main(void)
+{
+	char ft_dest[15] = "Hello, ";
+	char ft_src[10] = "123World!";
+	char dest[15] = "Hello, ";
+	char src[10] = "123World!";
+	unsigned int size = 12;
 
-// 	printf("%lu %d\n", strlcat(dest, src, size), ft_strlcat(ft_dest, ft_src,
-// 			size));
-// 	printf("%s\n%s\n", dest, ft_dest);
+	printf("%lu %d\n", strlcat(dest, src, size), ft_strlcat(ft_dest, ft_src,
+			size));
+	printf("%s\n%s\n", dest, ft_dest);
 
-// 	return (0);
-// }
+	return (0);
+}
