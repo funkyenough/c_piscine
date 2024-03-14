@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:36:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 21:38:22 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/14 21:39:38 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strcat(char *dest, char *src)
 		dest++;
 	while (*src != 0)
 		*dest++ = *src++;
-	// *++dest = '\0';
 	return (ptr);
 }
 

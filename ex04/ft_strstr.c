@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:02:37 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 21:38:12 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/14 21:41:30 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ char	*ft_strstr(char *str, char *to_find)
 		{
 			start = str;
 			needle = to_find;
-			while (*needle != '\0' && *++start == *++needle)
+			while (*needle != '\0' && *start == *needle)
 			{
-				;
+				start++;
+				needle++;
 			}
 			if (*needle == '\0')
 				return (str);
