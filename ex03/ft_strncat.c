@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 21:40:16 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 21:40:17 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/15 10:33:58 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		*dest++ = *src++;
 		nb--;
 	}
-	*++dest = '\0';
+	*dest = '\0';
 	return (ptr);
 }
 // #include <stdio.h>

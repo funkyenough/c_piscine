@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:02:36 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 21:57:32 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/15 18:01:01 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		return (size + src_len);
 	while (*dest != 0)
 		dest++;
-	while (size - dest_len - 1 > 0)
+	while (size - dest_len > 0)
 	{
-		*dest++ = *src++;
+		*dest = *src;
+		dest++;
+		src++;
 		size--;
 	}
+	*(--dest) = '\0';
 	return (dest_len + src_len);
 }
 
@@ -52,7 +55,7 @@ int	main(void)
 	char dest[15] = "Hello, ";
 	char ft_src[10] = "123World!";
 	char src[10] = "123World!";
-	unsigned int size = 4;
+	unsigned int size = 20;
 
 	printf("%lu %d\n", strlcat(dest, src, size), ft_strlcat(ft_dest, ft_src,
 			size));

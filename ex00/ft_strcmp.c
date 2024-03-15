@@ -6,16 +6,16 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:35:37 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/14 21:38:32 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/15 11:47:44 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	while (!(*s1 == 0 || *s2 == 0))
+	while (*s1 != 0 || *s2 != 0)
 	{
 		if (*s1 != *s2)
-			return (*s1 - *s2);
+			return ((unsigned char)*s1 - (unsigned char)*s2);
 		s1++;
 		s2++;
 	}
