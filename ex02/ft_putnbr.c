@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/16 12:09:45 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/16 12:12:26 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <limits.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -13,6 +25,7 @@ void	ft_putnbr_recursion(int nb)
 		write(1, &mod, 1);
 	}
 }
+
 void	ft_putnbr(int nb)
 {
 	if (nb == INT_MIN)
@@ -33,22 +46,23 @@ void	ft_putnbr(int nb)
 	ft_putnbr_recursion(nb);
 }
 
-void	helper(int i)
-{
-	ft_putnbr(i);
-	printf("\n");
-}
-int	main(void)
-{
-	helper(INT_MAX);
-	helper(INT_MIN);
-	helper(0);
-	helper(1);
-	helper(-1);
-	helper(123456789);
-	helper(-123456789);
-	helper(10);
-	helper(-10);
-	helper(1000000000);
-	helper(-1000000000);
-}
+// void	helper(int i)
+// {
+// 	ft_putnbr(i);
+// 	printf("\n");
+// }
+
+// int	main(void)
+// {
+// 	helper(INT_MAX);
+// 	helper(INT_MIN);
+// 	helper(0);
+// 	helper(1);
+// 	helper(-1);
+// 	helper(123456789);
+// 	helper(-123456789);
+// 	helper(10);
+// 	helper(-10);
+// 	helper(1000000000);
+// 	helper(-1000000000);
+// }
