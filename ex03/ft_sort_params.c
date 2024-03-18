@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 08:20:39 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/18 08:32:57 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/18 10:26:20 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	ft_print(int argc, char **argv)
 		i++;
 	}
 }
+
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -81,6 +82,5 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_sort_argv(argc, argv);
-
 	ft_print(argc, argv);
 }
