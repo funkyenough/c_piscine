@@ -6,11 +6,9 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:19:03 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/18 12:19:44 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:38:14 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_recursive_factorial(int nb)
 {
@@ -21,11 +19,12 @@ int	ft_recursive_factorial(int nb)
 	return (nb * ft_recursive_factorial(nb - 1));
 }
 
-int	main(void)
-{
-	int	nb;
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	nb;
 
-	nb = 5;
-	printf("%d", ft_recursive_factorial(nb));
-	return (0);
-}
+// 	nb = 5;
+// 	printf("%d", ft_recursive_factorial(nb));
+// 	return (0);
+// }
