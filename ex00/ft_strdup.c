@@ -6,13 +6,9 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 20:45:35 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/18 20:45:35 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/18 20:53:32 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// The strdup() function allocates sufficient memory for a copy of the
-// string s1, does the copy, and returns a pointer to it.  The pointer may
-// subsequently be used as an argument to the function free(3).
 
 #include <stdio.h>
 #include <stdlib.h>
