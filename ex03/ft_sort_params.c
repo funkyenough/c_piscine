@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 08:20:39 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/18 10:26:20 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/18 10:29:58 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-void	ft_swap(char *s1, char *s2)
+void	ft_swap(char **s1, char **s2)
 {
 	char	*tmp;
 
-	tmp = s1;
-	s1 = s2;
-	s2 = tmp;
+	tmp = *s1;
+	*s1 = *s2;
+	*s2 = tmp;
 }
 
 void	ft_sort_argv(int argc, char **argv)
@@ -46,7 +46,7 @@ void	ft_sort_argv(int argc, char **argv)
 		{
 			if (ft_strcmp(argv[i], argv[j]) > 0)
 			{
-				ft_swap(argv[i], argv[j]);
+				ft_swap(&argv[i], &argv[j]);
 			}
 			j++;
 		}
