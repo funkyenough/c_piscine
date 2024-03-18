@@ -1,4 +1,5 @@
 a.out
+.gitignore
 .DS_Store
 .vscode
 /*.dSYM
