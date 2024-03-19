@@ -1,0 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ex04                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 13:42:13 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/19 13:46:43 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// Create a function that returns the result of the conversion of the string nbr from a base base_from to a base base_to.
+// nbr, base_from, base_to may be not writable.
+// nbr will follow the same rules as ft_atoi_base(from an other module).Beware of ’+’,
+//	’-’ and whitespaces.
+// The number represented by nbr must fit inside an int.
+// If a base is wrong, NULL should be returned.
+// The returned number must be prefix only by a single and uniq ’-’ if necessary,
+// no whitespaces, no ’+’.
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+{
+	char	*str;
+	long	long_nbr;
+
+	if (!ft_base_is_valid(base_from) || !ft_base_is_valid(base_to))
+		return (0);
+	// convert number to long, check if it over/underflows int,
+	//	else return false
+}
+
+int	ft_base_is_valid(char *str)
+{
+	int	i;
+	int	j;
+	int	len;
+
+	i = 0;
+	j = 0;
+	len = ft_str_len(str);
+	if (len <= 1)
+		return (0);
+	while (i < len)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (str[i] == str[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+int	main(void)
+{
+	ft_convert_base()
+}
