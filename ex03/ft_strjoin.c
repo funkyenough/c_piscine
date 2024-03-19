@@ -6,13 +6,9 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:14:15 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/19 13:32:48 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/19 13:52:08 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//  Write a function that will concatenate all the strings pointed by strs separated by sep.
-//  size is the number of strings in strs
-//  If size is 0, you must return an empty string that you can free().
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,6 +22,7 @@ int	ft_strlen(char *str)
 		str++;
 	return (str - s);
 }
+
 char	*ft_strcat(char *dest, char *src)
 {
 	char	*ptr;
@@ -38,6 +35,7 @@ char	*ft_strcat(char *dest, char *src)
 	*dest = '\0';
 	return (ptr);
 }
+
 int	ft_strslen(int size, char **strs, char *sep)
 {
 	int	i;
@@ -54,6 +52,7 @@ int	ft_strslen(int size, char **strs, char *sep)
 	}
 	return (len);
 }
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
@@ -64,7 +63,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	joined = (char *)malloc((len + 1) * sizeof(char));
 	*joined = '\0';
 	if (joined == NULL)
-		return (NULL); // handle memory allocation failure
+		return (NULL);
 	if (size == 0)
 		free(joined);
 	i = 0;
@@ -79,24 +78,24 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (joined);
 }
 
-int	main(void)
-{
-	char *strs[] = {
-		"Hello",
-		"World!",
-		"Hello",
-		"World!",
-		"Hello",
-		"World!",
-		"Hello",
-		"World!",
-		"Hello",
-		"World!",
-	};
-	char *sep = ", ";
-	int size = 10;
+// int	main(void)
+// {
+// 	char *strs[] = {
+// 		"Hello",
+// 		"World!",
+// 		"Hello",
+// 		"World!",
+// 		"Hello",
+// 		"World!",
+// 		"Hello",
+// 		"World!",
+// 		"Hello",
+// 		"World!",
+// 	};
+// 	char *sep = ", ";
+// 	int size = 10;
 
-	printf("%s\n", ft_strjoin(size, strs, sep));
-	free(ft_strjoin(size, strs, sep));
-	return (0);
-}
+// 	printf("%s\n", ft_strjoin(size, strs, sep));
+// 	free(ft_strjoin(size, strs, sep));
+// 	return (0);
+// }
