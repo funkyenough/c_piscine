@@ -1,18 +1,15 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
-void	ft_putnbr_recursion(unsigned long long nbr, char *str, int digit)
+void	ft_putnbr_recursion(unsigned long long nbr, char *base, int digit)
 {
-	if (nbr >= 16 || digit == 0)
+	if (digit > 0)
 	{
-		ft_putnbr_recursion(nbr / 16, str, digit--);
-		ft_putnbr_recursion(nbr % 16, str, digit);
+		ft_putnbr_recursion(nbr / 16, base, digit - 1);
+		write(1, &base[nbr % 16], 1);
 	}
-	else
-		if (nbr == 0)
-			write(1, &"0", 1);
-		else
-			write(1, &str[nbr], 1);
+	else if (digit == 0 && nbr == 0)
+		write(1, &"0", 1);
 }
 
 void	ft_putnbr_hex(unsigned long long nbr)
@@ -25,18 +22,17 @@ void	ft_putnbr_hex(unsigned long long nbr)
 	ft_putnbr_recursion(nbr, base, digit);
 }
 
-void ft_print_address(unsigned long long addr)
+void	ft_print_address(unsigned long long addr)
 {
 	ft_putnbr_hex(addr);
 }
 
-void *ft_print_memory(void *addr)
+void	*ft_print_memory(void *addr)
 {
-	printf("%p\n", addr);
-	printf("%llu\n", (unsigned long long)addr);
-
+	printf("integer %llu\n", (unsigned long long)addr);
+	printf("address %p\n", addr);
 	ft_print_address((unsigned long long)addr);
-	return addr;
+	return (addr);
 }
 
 int	main(void)
