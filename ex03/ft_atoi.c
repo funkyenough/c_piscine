@@ -6,23 +6,12 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 12:09:47 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/16 12:12:37 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:14:00 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int	ft_is_number(char *str)
-{
-	if ('0' <= *str && *str <= '9')
-	{
-		str++;
-		return (1);
-	}
-	str++;
-	return (0);
-}
 
 int	ft_atoi(char *str)
 {
