@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 19:38:46 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/21 20:19:31 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/22 11:22:09 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,15 @@ void	ft_putnbr_recursion(long nbr, char *str)
 
 void	ft_putnbr_hex(int nbr)
 {
-	char 	*base;
+	char	*base;
 
 	base = "0123456789abcdef";
 	ft_putnbr_recursion(nbr, base);
 }
 
-
 void	ft_putstr_non_printable(char *str)
 {
-
-	while(*str)
+	while (*str)
 	{
 		if (!(' ' <= *str && *str <= '~'))
 		{
