@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:20:46 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/22 11:21:43 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/22 20:29:40 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ void	ft_putnbr_hex(unsigned long long nbr)
 	ft_putnbr_recursion(nbr, ADDR_DIGIT, &len, buf, flag);
 	buf[len] = '\0';
 	write(1, buf, len);
+	len = 0;
 }
 
-void	ft_putstr_hex(char *addr)
+char	*ft_putstr_hex(char *addr)
 {
 	char	buf[41];
 	int		len;
@@ -52,7 +53,7 @@ void	ft_putstr_hex(char *addr)
 
 	len = 0;
 	flag = 1;
-	while (*addr)
+	while (*addr && (unsigned long long)addr % 40 != 0)
 	{
 		ft_putnbr_recursion((unsigned long long)*addr, CHAR_DIGIT, &len, buf,
 			flag);
@@ -60,6 +61,7 @@ void	ft_putstr_hex(char *addr)
 	}
 	buf[len] = '\0';
 	write(1, buf, len);
+	return (addr);
 }
 
 void	ft_putstr(char *addr)
@@ -73,19 +75,22 @@ void	ft_putstr(char *addr)
 
 void	*ft_print_memory(void *addr)
 {
-	ft_putnbr_hex((unsigned long long)addr);
-	write(1, ": ", 2);
-	ft_putstr_hex((char *)addr);
-	// write(1, "\n", 1);
-	ft_putstr((char *)addr);
-	write(1, "\n", 1);
+	while ((unsigned long long)addr % ADDR_DIGIT == 0)
+	{
+		ft_putnbr_hex((unsigned long long)addr);
+		write(1, ": ", 2);
+		addr = ft_putstr_hex((char *)addr);
+		// write(1, "\n", 1);
+		ft_putstr((char *)addr);
+		write(1, "\n", 1);
+		addr += 0x10;
+	}
 	return (addr);
 }
 
-// int	main(void)
-// {
-// 	char str[] = "Hello, World!   ";
-// 	// void *ptr = (void *)0xbcab8885253f6531;
+int	main(void)
+{
+	char str[] = "Hello, World! My name is Ying, and it is my pleasure to serve you today.";
 
-// 	ft_print_memory(str);
-// }
+	ft_print_memory(str);
+}
