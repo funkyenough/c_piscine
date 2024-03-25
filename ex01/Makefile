@@ -18,9 +18,9 @@ $(OBJS) : $(SRCS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm $(OBJS)
+	rm -f $(OBJS)
 
 fclean : clean
-	rm $(TARGET)
+	rm -f $(TARGET)
 
 re : fclean all
