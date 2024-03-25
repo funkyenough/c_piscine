@@ -1,10 +1,10 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR := ./srcs
-INC_DIR := ./include
+SRC_DIR = srcs
+INC_DIR = includes
 
-SRCS = $(addprefix $(SRC_DIR)/,ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c)
+SRCS = srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
 OBJS = $(SRCS:.c=.o)
 
 TARGET = libft.a
@@ -15,7 +15,7 @@ $(TARGET) : $(OBJS)
 	ar rc $(TARGET) $(SRCS)
 
 $(OBJS) : $(SRCS)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 clean :
 	rm -f $(OBJS)
