@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:03:08 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/25 21:45:23 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/25 21:46:35 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,4 +131,59 @@ char	**ft_split(char *str, char *charset)
 // 	while (*str != (void *)0)
 // 		str++;
 // 	return (str - s);
+// }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char **res;
+// 	int count;
+
+// 	res = ft_split("                                           ", "   ");
+// 	count = 0;
+// 	printf("%p\n", res);
+// 	while (res && res[count])
+// 	{
+// 		printf("count[%d]: %s\n", count, res[count]);
+// 		free(res[count++]);
+// 	}
+// 	free(res);
+// 	res = ft_split("                         ", "     ");
+// 	count = 0;
+// 	printf("%p\n", res);
+// 	while (res && res[count])
+// 	{
+// 		printf("count[%d]: %s\n", count, res[count]);
+// 		free(res[count++]);
+// 	}
+// 	free(res);
+// 	res = ft_split("0fnoU", "0fnoU");
+// 	count = 0;
+// 	printf("%p\n", res);
+// 	while (res && res[count])
+// 	{
+// 		printf("count[%d]: %s\n", count, res[count]);
+// 		free(res[count++]);
+// 	}
+// 	free(res);
+// 	res = ft_split("CV2qFU8GG        6mqYY9BGTVCV    LI oV4rgCRPsk9GQFedJQ",
+// 			"Y52C");
+// 	count = 0;
+// 	printf("%p\n", res);
+// 	while (res && res[count])
+// 	{
+// 		printf("count[%d]: %s\n", count, res[count]);
+// 		free(res[count++]);
+// 	}
+// 	free(res);
+// 	res = ft_split("  gh  ", " gh");
+// 	count = 0;
+// 	printf("%p\n", res);
+// 	while (res && res[count])
+// 	{
+// 		printf("count[%d]: %s\n", count, res[count]);
+// 		free(res[count++]);
+// 	}
+// 	free(res);
 // }
