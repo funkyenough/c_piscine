@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 16:14:08 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/25 17:09:42 by yinhong          ###   ########.fr       */
+/*   Created: 2024/03/25 19:03:08 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/25 19:03:09 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ int	is_charset(char c, char *charset)
 	return (0);
 }
 
+int	skip_charset(char *str, char *charset, int i)
+{
+	while (is_charset(str[i], charset))
+		i++;
+	return (i);
+}
+
 char	**alloc_strs(char *str, char *charset)
 {
 	char	**result;
@@ -34,12 +41,16 @@ char	**alloc_strs(char *str, char *charset)
 	i = 0;
 	while (str[i])
 	{
-		if (i != 0 && is_charset(str[i], charset))
-			if (!is_charset(str[i - 1], charset))
-				size++;
-		i++;
+		if (is_charset(str[i], charset))
+		{
+			size++;
+			while (is_charset(str[i], charset) && str[i])
+				i++;
+		}
+		else
+			i++;
 	}
-	result = (char **)malloc((size + 1) * sizeof(char *));
+	result = (char **)malloc((size + 2) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
 	return (result);
@@ -70,19 +81,52 @@ char	**ft_split(char *str, char *charset)
 	char	**result;
 	int		i;
 	int		j;
+	int		head;
 
+	i = 0;
+	j = 0;
+	head = 0;
+	result = alloc_strs(str, charset);
+	head = skip_charset(str, charset, i);
+	while (str[i])
+	{
+		if (is_charset(str[i], charset) && i != head)
+		{
+			result[j++] = ft_strndup(&str[head], i - head);
+			head = skip_charset(str, charset, i);
+		}
+		else
+			i++;
+	}
+	if (i != head)
+		result[j++] = ft_strndup(&str[head], i - head);
+	result[j] = NULL;
 	return (result);
 }
 
-int	main(void)
-{
-	char *str = "Hello, World, My, Name is, Ying!, This is a, Test  String.";
-	char *charset = ",";
-	char **result;
+// int	main(void)
+// {
+// 	char	*str;
+// 	char	*charset;
+// 	char	**result;
+// 	int		len;
 
-	result = ft_split(str, charset);
+// 	str = "   Hello, World!    ";
+// 	charset = ", %@";
+// 	result = ft_split(str, charset);
+// 	len = ft_strstrlen(result);
+// 	printf("strstrlen %d\n", len);
+// 	for (int i = 0; i < len - 1; i++)
+// 		printf("%s\n", result[i]);
+// 	return (0);
+// }
 
-	for (int i = 0; i < 8; i++)
-		printf("%s", result[i]);
-	return (0);
-}
+// int	ft_strstrlen(char **str)
+// {
+// 	char **s;
+
+// 	s = str;
+// 	while (*str != (void *)0)
+// 		str++;
+// 	return (str - s);
+// }
