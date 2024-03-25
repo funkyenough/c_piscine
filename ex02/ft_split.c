@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:03:08 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/25 21:44:25 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/25 21:45:23 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,31 +104,31 @@ char	**ft_split(char *str, char *charset)
 	return (result);
 }
 
-int		ft_strstrlen(char **str);
+// int		ft_strstrlen(char **str);
 
-int	main(void)
-{
-	char	*str;
-	char	*charset;
-	char	**result;
-	int		len;
+// int	main(void)
+// {
+// 	char	*str;
+// 	char	*charset;
+// 	char	**result;
+// 	int		len;
 
-	str = "   Hello, World!    ";
-	charset = ", %@";
-	result = ft_split(str, charset);
-	len = ft_strstrlen(result);
-	printf("strstrlen %d\n", len);
-	for (int i = 0; i < len - 1; i++)
-		printf("%s\n", result[i]);
-	return (0);
-}
+// 	str = "   Hello, World!    ";
+// 	charset = ", %@";
+// 	result = ft_split(str, charset);
+// 	len = ft_strstrlen(result);
+// 	printf("strstrlen %d\n", len);
+// 	for (int i = 0; i < len - 1; i++)
+// 		printf("%s\n", result[i]);
+// 	return (0);
+// }
 
-int	ft_strstrlen(char **str)
-{
-	char **s;
+// int	ft_strstrlen(char **str)
+// {
+// 	char **s;
 
-	s = str;
-	while (*str != (void *)0)
-		str++;
-	return (str - s);
-}
+// 	s = str;
+// 	while (*str != (void *)0)
+// 		str++;
+// 	return (str - s);
+// }
