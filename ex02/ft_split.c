@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:03:08 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/25 19:03:09 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/25 21:44:25 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	**ft_split(char *str, char *charset)
 	head = skip_charset(str, charset, i);
 	while (str[i])
 	{
-		if (is_charset(str[i], charset) && i != head)
+		if (is_charset(str[i], charset) && i >= head)
 		{
 			result[j++] = ft_strndup(&str[head], i - head);
 			head = skip_charset(str, charset, i);
@@ -98,35 +98,37 @@ char	**ft_split(char *str, char *charset)
 		else
 			i++;
 	}
-	if (i != head)
+	if (i >= head)
 		result[j++] = ft_strndup(&str[head], i - head);
 	result[j] = NULL;
 	return (result);
 }
 
-// int	main(void)
-// {
-// 	char	*str;
-// 	char	*charset;
-// 	char	**result;
-// 	int		len;
+int		ft_strstrlen(char **str);
 
-// 	str = "   Hello, World!    ";
-// 	charset = ", %@";
-// 	result = ft_split(str, charset);
-// 	len = ft_strstrlen(result);
-// 	printf("strstrlen %d\n", len);
-// 	for (int i = 0; i < len - 1; i++)
-// 		printf("%s\n", result[i]);
-// 	return (0);
-// }
+int	main(void)
+{
+	char	*str;
+	char	*charset;
+	char	**result;
+	int		len;
 
-// int	ft_strstrlen(char **str)
-// {
-// 	char **s;
+	str = "   Hello, World!    ";
+	charset = ", %@";
+	result = ft_split(str, charset);
+	len = ft_strstrlen(result);
+	printf("strstrlen %d\n", len);
+	for (int i = 0; i < len - 1; i++)
+		printf("%s\n", result[i]);
+	return (0);
+}
 
-// 	s = str;
-// 	while (*str != (void *)0)
-// 		str++;
-// 	return (str - s);
-// }
+int	ft_strstrlen(char **str)
+{
+	char **s;
+
+	s = str;
+	while (*str != (void *)0)
+		str++;
+	return (str - s);
+}
