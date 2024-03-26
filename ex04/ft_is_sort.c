@@ -1,47 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 10:09:46 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/26 10:23:59 by yinhong          ###   ########.fr       */
+/*   Created: 2024/03/26 10:13:39 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/26 10:23:42 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int length, int (*f)(char *))
+int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	int	count;
-
-	count = 0;
 	while (length)
 	{
-		if (f(*tab) != 0)
-			count++;
+		if (f(*tab, *(tab + 1)) >= 0)
+			return (-1);
 		tab++;
 		length--;
 	}
-	return (count);
+	return (0);
 }
 
-// int	f(char *c)
+// int	f(int a, int b)
 // {
-// 	if (*c == ' ')
-// 	{
-// 		return (1);
-// 	}
-// 	else
-// 	{
-// 		return (0);
-// 	}
+// 	return (a - b);
 // }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	*tab[3] = {" ", " ", "ab"};
+// 	int	tab[4] = {1, 2, 3, 2};
 
-// 	printf("%d\n", ft_count_if(tab, 3, f));
+// 	printf("%d\n", ft_is_sort(tab, 4, f));
 // }
