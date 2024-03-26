@@ -6,12 +6,22 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:03:08 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/25 21:46:35 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/26 15:04:22 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+int	ft_strlen(char *str)
+{
+	char	*s;
+
+	s = str;
+	while (*str != '\0')
+		str++;
+	return (str - s);
+}
 
 int	is_charset(char c, char *charset)
 {
@@ -22,38 +32,6 @@ int	is_charset(char c, char *charset)
 		charset++;
 	}
 	return (0);
-}
-
-int	skip_charset(char *str, char *charset, int i)
-{
-	while (is_charset(str[i], charset))
-		i++;
-	return (i);
-}
-
-char	**alloc_strs(char *str, char *charset)
-{
-	char	**result;
-	int		size;
-	int		i;
-
-	size = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (is_charset(str[i], charset))
-		{
-			size++;
-			while (is_charset(str[i], charset) && str[i])
-				i++;
-		}
-		else
-			i++;
-	}
-	result = (char **)malloc((size + 2) * sizeof(char *));
-	if (result == NULL)
-		return (NULL);
-	return (result);
 }
 
 char	*ft_strndup(char *src, int n)
@@ -81,47 +59,26 @@ char	**ft_split(char *str, char *charset)
 	char	**result;
 	int		i;
 	int		j;
-	int		head;
+	int		wordlength;
 
 	i = 0;
 	j = 0;
-	head = 0;
-	result = alloc_strs(str, charset);
-	head = skip_charset(str, charset, i);
+	wordlength = 0;
+	result = (char **)malloc((ft_strlen(str) + 1) * sizeof(char));
 	while (str[i])
 	{
-		if (is_charset(str[i], charset) && i >= head)
-		{
-			result[j++] = ft_strndup(&str[head], i - head);
-			head = skip_charset(str, charset, i);
-		}
-		else
+		while (is_charset(str[i], charset))
 			i++;
+		wordlength = 0;
+		while (str[i + wordlength] && !is_charset(str[i + wordlength], charset))
+			wordlength++;
+		if (wordlength)
+			result[j++] = ft_strndup(&str[i], wordlength);
+		i += wordlength;
 	}
-	if (i >= head)
-		result[j++] = ft_strndup(&str[head], i - head);
 	result[j] = NULL;
 	return (result);
 }
-
-// int		ft_strstrlen(char **str);
-
-// int	main(void)
-// {
-// 	char	*str;
-// 	char	*charset;
-// 	char	**result;
-// 	int		len;
-
-// 	str = "   Hello, World!    ";
-// 	charset = ", %@";
-// 	result = ft_split(str, charset);
-// 	len = ft_strstrlen(result);
-// 	printf("strstrlen %d\n", len);
-// 	for (int i = 0; i < len - 1; i++)
-// 		printf("%s\n", result[i]);
-// 	return (0);
-// }
 
 // int	ft_strstrlen(char **str)
 // {
@@ -133,6 +90,23 @@ char	**ft_split(char *str, char *charset)
 // 	return (str - s);
 // }
 
+// int	main(void)
+// {
+// 	char	*str;
+// 	char	*charset;
+// 	char	**result;
+// 	int		len;
+
+// 	str = "   Hello, World!aa aaaa   ";
+// 	charset = ", %@a";
+// 	result = ft_split(str, charset);
+// 	len = ft_strstrlen(result);
+// 	printf("strstrlen %d\n", len);
+// 	for (int i = 0; i < len; i++)
+// 		printf("%s\n", result[i]);
+// 	return (0);
+// }
+
 // #include <stdio.h>
 
 // int	main(void)
@@ -140,33 +114,33 @@ char	**ft_split(char *str, char *charset)
 // 	char **res;
 // 	int count;
 
-// 	res = ft_split("                                           ", "   ");
-// 	count = 0;
-// 	printf("%p\n", res);
-// 	while (res && res[count])
-// 	{
-// 		printf("count[%d]: %s\n", count, res[count]);
-// 		free(res[count++]);
-// 	}
-// 	free(res);
-// 	res = ft_split("                         ", "     ");
-// 	count = 0;
-// 	printf("%p\n", res);
-// 	while (res && res[count])
-// 	{
-// 		printf("count[%d]: %s\n", count, res[count]);
-// 		free(res[count++]);
-// 	}
-// 	free(res);
-// 	res = ft_split("0fnoU", "0fnoU");
-// 	count = 0;
-// 	printf("%p\n", res);
-// 	while (res && res[count])
-// 	{
-// 		printf("count[%d]: %s\n", count, res[count]);
-// 		free(res[count++]);
-// 	}
-// 	free(res);
+	// res = ft_split("                                           ", "   ");
+	// count = 0;
+	// printf("%p\n", res);
+	// while (res && res[count])
+	// {
+	// 	printf("count[%d]: %s\n", count, res[count]);
+	// 	free(res[count++]);
+	// }
+	// free(res);
+	// res = ft_split("                         ", "     ");
+	// count = 0;
+	// printf("%p\n", res);
+	// while (res && res[count])
+	// {
+	// 	printf("count[%d]: %s\n", count, res[count]);
+	// 	free(res[count++]);
+	// }
+	// free(res);
+	// res = ft_split("0fnoU", "0fnoU");
+	// count = 0;
+	// printf("%p\n", res);
+	// while (res && res[count])
+	// {
+	// 	printf("count[%d]: %s\n", count, res[count]);
+	// 	free(res[count++]);
+	// }
+	// free(res);
 // 	res = ft_split("CV2qFU8GG        6mqYY9BGTVCV    LI oV4rgCRPsk9GQFedJQ",
 // 			"Y52C");
 // 	count = 0;
