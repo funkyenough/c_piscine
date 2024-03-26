@@ -1,26 +1,26 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/26 10:09:46 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/26 10:10:09 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_any(char **tab, int(*f)(char*))
-{
-    while (*tab != NULL)
-    {
-        if (f(*tab) != 0)
-            return 1;
-        tab++;
-    }
-    return 0;
-}
-
-int ft_count_if(char **tab, int(*f)(char*))
+int ft_count_if(char **tab, int length, int(*f)(char*))
 {
 	int count;
 
 	count = 0;
-	while (*tab)
+	while (length)
 	{
 		if (f(*tab) != 0)
 			count++;
 		tab++;
+		length--;
 	}
 	return count;
 }
@@ -35,8 +35,6 @@ int f(char *c){
 
 #include <stdio.h>
 int main(){
-    char *tab[2] = {"ab","ab"};
-	    printf("%d\n", ft_any(tab, f));
-    // printf("%d\n", ft_count_if(tab, f));
-
+    char *tab[3] = {" ", " ", "ab"};
+    printf("%d\n", ft_count_if(tab, 3, f));
 }
