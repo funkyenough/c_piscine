@@ -1,4 +1,16 @@
-void	ft_foreach(int *tab, int length, void(*f)(int))
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/26 10:10:42 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/26 10:10:42 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	while (length)
 	{
@@ -38,5 +50,5 @@ void	ft_foreach(int *tab, int length, void(*f)(int))
 // 	int arr[3] = {1, 2 ,3};
 // 	ft_foreach(arr, 3, &ft_putnbr);
 
-// 	return 0;
+// 	return (0);
 // }

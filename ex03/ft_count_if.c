@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:09:46 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/26 10:10:09 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/26 10:11:05 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_count_if(char **tab, int length, int(*f)(char*))
+int	ft_count_if(char **tab, int length, int (*f)(char *))
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (length)
@@ -22,19 +22,26 @@ int ft_count_if(char **tab, int length, int(*f)(char*))
 		tab++;
 		length--;
 	}
-	return count;
+	return (count);
 }
 
-int f(char *c){
-    if(*c==' '){
-        return 1;
-    }else{
-        return 0;
-    }
+int	f(char *c)
+{
+	if (*c == ' ')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
 
-#include <stdio.h>
-int main(){
-    char *tab[3] = {" ", " ", "ab"};
-    printf("%d\n", ft_count_if(tab, 3, f));
-}
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	*tab[3] = {" ", " ", "ab"};
+
+// 	printf("%d\n", ft_count_if(tab, 3, f));
+// }
