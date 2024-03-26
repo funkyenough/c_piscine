@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:03:08 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/26 15:04:22 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/26 20:15:20 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_split(char *str, char *charset)
 	i = 0;
 	j = 0;
 	wordlength = 0;
-	result = (char **)malloc((ft_strlen(str) + 1) * sizeof(char));
+	result = (char **)malloc((ft_strlen(str) + 1) * sizeof(char *));
 	while (str[i])
 	{
 		while (is_charset(str[i], charset))
@@ -80,84 +80,55 @@ char	**ft_split(char *str, char *charset)
 	return (result);
 }
 
-// int	ft_strstrlen(char **str)
-// {
-// 	char **s;
-
-// 	s = str;
-// 	while (*str != (void *)0)
-// 		str++;
-// 	return (str - s);
-// }
-
-// int	main(void)
-// {
-// 	char	*str;
-// 	char	*charset;
-// 	char	**result;
-// 	int		len;
-
-// 	str = "   Hello, World!aa aaaa   ";
-// 	charset = ", %@a";
-// 	result = ft_split(str, charset);
-// 	len = ft_strstrlen(result);
-// 	printf("strstrlen %d\n", len);
-// 	for (int i = 0; i < len; i++)
-// 		printf("%s\n", result[i]);
-// 	return (0);
-// }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char **res;
-// 	int count;
-
-	// res = ft_split("                                           ", "   ");
-	// count = 0;
-	// printf("%p\n", res);
-	// while (res && res[count])
-	// {
-	// 	printf("count[%d]: %s\n", count, res[count]);
-	// 	free(res[count++]);
-	// }
-	// free(res);
-	// res = ft_split("                         ", "     ");
-	// count = 0;
-	// printf("%p\n", res);
-	// while (res && res[count])
-	// {
-	// 	printf("count[%d]: %s\n", count, res[count]);
-	// 	free(res[count++]);
-	// }
-	// free(res);
-	// res = ft_split("0fnoU", "0fnoU");
-	// count = 0;
-	// printf("%p\n", res);
-	// while (res && res[count])
-	// {
-	// 	printf("count[%d]: %s\n", count, res[count]);
-	// 	free(res[count++]);
-	// }
-	// free(res);
-// 	res = ft_split("CV2qFU8GG        6mqYY9BGTVCV    LI oV4rgCRPsk9GQFedJQ",
-// 			"Y52C");
-// 	count = 0;
-// 	printf("%p\n", res);
-// 	while (res && res[count])
-// 	{
-// 		printf("count[%d]: %s\n", count, res[count]);
-// 		free(res[count++]);
-// 	}
-// 	free(res);
-// 	res = ft_split("  gh  ", " gh");
-// 	count = 0;
-// 	printf("%p\n", res);
-// 	while (res && res[count])
-// 	{
-// 		printf("count[%d]: %s\n", count, res[count]);
-// 		free(res[count++]);
-// 	}
-// 	free(res);
-// }
+#include <stdio.h>
+int  main(void)
+{
+  char  **res;
+  int  count;
+  
+  res = ft_split ("                                           ", "   ");
+  count = 0;
+  printf ("%p\n", res);
+  while (res && res[count])
+  {
+    printf ("count[%d]: %s\n", count, res[count]);
+    free (res[count++]);
+  }
+  free (res);
+  res = ft_split ("                         ", "     ");
+  count = 0;
+  printf ("%p\n", res);
+  while (res && res[count])
+  {
+    printf ("count[%d]: %s\n", count, res[count]);
+    free (res[count++]);
+  }
+  free (res);
+  res = ft_split ("0fnoU", "0fnoU");
+  count = 0;
+  printf ("%p\n", res);
+  while (res && res[count])
+  {
+    printf ("count[%d]: %s\n", count, res[count]);
+    free (res[count++]);
+  }
+  free (res);
+  res = ft_split ("CV2qFU8GG        6mqYY9BGTVCV    LI oV4rgCRPsk9GQFedJQ", "Y52C");
+  count = 0;
+  printf ("%p\n", res);
+  while (res && res[count])
+  {
+    printf ("count[%d]: %s\n", count, res[count]);
+    free (res[count++]);
+  }
+  free (res);
+  res = ft_split ("  gh  ", " gh");
+  count = 0;
+  printf ("%p\n", res);
+  while (res && res[count])
+  {
+    printf ("count[%d]: %s\n", count, res[count]);
+    free (res[count++]);
+  }
+  free (res);
+}
