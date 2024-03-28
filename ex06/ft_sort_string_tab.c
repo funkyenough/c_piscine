@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:33:43 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/28 17:34:20 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 17:37:12 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_sort_string_tab(char **tab)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (tab[i + 1])
 	{
 		j = i + 1;
