@@ -6,48 +6,49 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:10:42 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/26 10:10:42 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:00:42 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	while (length)
-	{
-		(*f)(*tab);
-		tab++;
-		length--;
-	}
+	int i;
+	
+	i = -1;
+	while (++i < length)
+		(*f)(tab[i]);
 }
 
 // #include <limits.h>
 // #include <unistd.h>
 
+// void ft_putchar(char c)
+// {
+// 	write(1, &c, 1);
+// }
+
 // void	ft_putnbr(int nb)
 // {
-// 	char	mod;
+// 	long n;
 
-// 	if (nb == INT_MIN)
-// 	{
-// 		write(1, "-2147483648", 11);
-// 		return ;
-// 	}
-// 	if (nb < 0)
+// 	n = (long)nb;
+// 	if (n < 0)
 // 	{
 // 		write(1, &"-", 1);
-// 		nb = -nb;
+// 		n *= -1;
 // 	}
-// 	if (nb != 0)
+// 	if (n >= 10)
 // 	{
-// 		mod = nb % 10 + '0';
-// 		ft_putnbr(nb / 10);
+// 		ft_putnbr(n / 10);
+// 		ft_putnbr(n % 10);
 // 	}
-// 	write(1, &mod, 1);
+// 	else
+// 		ft_putchar(n + '0');
 // }
 
 // int	main(void)
 // {
-// 	int arr[3] = {1, 2 ,3};
+// 	int arr[3] = {-2147483648, 2147483647 ,0};
 // 	ft_foreach(arr, 3, &ft_putnbr);
 
 // 	return (0);
