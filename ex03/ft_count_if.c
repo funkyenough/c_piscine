@@ -6,21 +6,21 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:09:46 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/26 10:23:59 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:11:18 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_count_if(char **tab, int length, int (*f)(char *))
 {
+	int	i;
 	int	count;
 
+	i = -1;
 	count = 0;
-	while (length)
+	while (++i < length)
 	{
-		if (f(*tab) != 0)
+		if ((*f)(tab[i]) != 0)
 			count++;
-		tab++;
-		length--;
 	}
 	return (count);
 }
@@ -28,13 +28,9 @@ int	ft_count_if(char **tab, int length, int (*f)(char *))
 // int	f(char *c)
 // {
 // 	if (*c == ' ')
-// 	{
 // 		return (1);
-// 	}
 // 	else
-// 	{
 // 		return (0);
-// 	}
 // }
 
 // #include <stdio.h>
