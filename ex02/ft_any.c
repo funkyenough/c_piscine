@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:10:35 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/28 16:08:58 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 18:02:24 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_any(char **tab, int (*f)(char *))
 
 // int	main(void)
 // {
-// 	char	*tab[2] = {" ", "ab"};
+// 	char	*tab[3] = {"bb", " ", 0};
 
 // 	printf("%d\n", ft_any(tab, f));
 // }
