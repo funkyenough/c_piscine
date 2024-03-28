@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:13:39 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/28 16:39:23 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 18:04:16 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 	desc = 0;
 	while (i < length - 1)
 	{
-		if ((*f)(tab[i], tab[i + 1]) >= 0)
-			asc++;
 		if ((*f)(tab[i], tab[i + 1]) <= 0)
+			asc++;
+		if ((*f)(tab[i], tab[i + 1]) >= 0)
 			desc++;
 		i++;
 	}
