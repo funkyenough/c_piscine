@@ -3,7 +3,7 @@ TARGET = do-op
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = operateur.c utils.c do-op.c
+SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
 all : $(TARGET)

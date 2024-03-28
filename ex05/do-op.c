@@ -1,78 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do-op.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/28 16:02:10 by yinhong           #+#    #+#             */
+/*   Updated: 2024/03/28 16:40:27 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "operateur.h"
 #include <stdio.h>
 
-int check_op(char op[5], char *str);
+int	check_op(char *op, char *str)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strlen(str) != 1)
+		return (-1);
+	while (i < 5)
+	{
+		if (*str == op[i])
+			return (i);
+		i++;
+	}
+	return (-1);
+}
 
 int	main(int argc, char **argv)
 {
-	int a;
-	int b;
-	char op[5];
-	int (*f[5])(int a, int b);
-	int result = 0;
+	int		a;
+	int		b;
+	char	*ops;
+	int		op;
+	int		(*f[5])(int a, int b);
 
-	op[ADD] = '+';
-	op[SUB] = '-';
-	op[MUL] = '*';
-	op[DIV] = '/';
-	op[MOD] = '%';
-
-	f[ADD] = ft_add;
-	f[SUB] = ft_sub;
-	f[MUL] = ft_mul;
-	f[DIV] = ft_div;
-	f[MOD] = ft_mod;
-
+	f[0] = ft_add;
+	f[1] = ft_sub;
+	f[2] = ft_mul;
+	f[3] = ft_div;
+	f[4] = ft_mod;
+	ops = "+-*/%";
 	if (argc != 4)
 		return (0);
 	a = ft_atoi(argv[1]);
 	b = ft_atoi(argv[3]);
 	// TODO if op is not valid, return
-	if (!check_op(op, argv[2]))
+	
+	if ((op = check_op(ops, argv[2])) > -1)
 	{
-		write(1, "0\n", 2);
-		return 0;
-	}
-	else if (*argv[2] == '+')
-		result = f[0](a, b);
-	else if (*argv[2] == '-')
-		result = f[1](a, b);
-	else if (*argv[2] == '*')
-		result = f[2](a, b);
-	else if (*argv[2] == '/')
-	{
-		if (b == 0)
+		if ((op == 3) && b == 0)
 		{
 			write(1, "Stop : division by zero\n", 25);
 			return (0);
 		}
-		result = f[3](a, b);
-	}
-	else if (*argv[2] == '%')
-	{
-		if (b == 0)
+		else if ((op == 4) && b == 0)
 		{
 			write(1, "Stop : modulo by zero\n", 23);
 			return (0);
 		}
-		result = f[4](a, b);
+		else
+			ft_putnbr(f[op](a, b));
 	}
-	printf("%d\n", result);
 	return (0);
-}
-
-int check_op(char op[5], char *str)
-{
-	int i;
-
-	if (ft_strlen(str) != 1)
-		return 0;
-	i = 0;
-	while (i < 5)
-	{
-		if (*str == op[i])
-			return 1;
-		i++;
-	}
-	return 0;
 }

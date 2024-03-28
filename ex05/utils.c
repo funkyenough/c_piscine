@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:37:12 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/27 18:45:54 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:03:19 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,34 +48,26 @@ int	ft_strlen(char *str)
 	return (str - s);
 }
 
-void	ft_putnbr_recursion(int nb)
+void	ft_putchar(char c)
 {
-	char	mod;
-
-	if (nb != 0)
-	{
-		mod = nb % 10 + '0';
-		ft_putnbr_recursion(nb / 10);
-		write(1, &mod, 1);
-	}
+	write(1, &c, 1);
 }
 
 void	ft_putnbr(int nb)
 {
-	if (nb == INT_MIN)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
+	long	n;
+
+	n = (long)nb;
+	if (n < 0)
 	{
 		write(1, &"-", 1);
-		nb = -nb;
+		n *= -1;
 	}
-	if (nb == 0)
+	if (n >= 10)
 	{
-		write(1, "0", 1);
-		return ;
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
-	ft_putnbr_recursion(nb);
+	else
+		ft_putchar(n + '0');
 }
