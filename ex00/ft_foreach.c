@@ -6,14 +6,14 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:10:42 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/28 16:00:42 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:01:44 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int i;
-	
+	int	i;
+
 	i = -1;
 	while (++i < length)
 		(*f)(tab[i]);

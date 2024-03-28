@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 10:10:35 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/26 10:11:36 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:08:58 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 int	ft_any(char **tab, int (*f)(char *))
 {
-	while (*tab != NULL)
+	int	i;
+
+	i = -1;
+	while (tab[++i] != NULL)
 	{
-		if (f(*tab) != 0)
+		if ((*f)(tab[i]) != 0)
 			return (1);
-		tab++;
 	}
 	return (0);
 }
